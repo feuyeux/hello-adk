@@ -11,10 +11,8 @@ import (
 	"google.golang.org/adk/agent/llmagent"
 	"google.golang.org/adk/cmd/launcher"
 	"google.golang.org/adk/cmd/launcher/full"
-	"google.golang.org/adk/model/gemini"
 	"google.golang.org/adk/tool"
 	"google.golang.org/adk/tool/functiontool"
-	"google.golang.org/genai"
 )
 
 type elementRequest struct {
@@ -48,9 +46,8 @@ func getElementInfo(ctx tool.Context, args elementRequest) (map[string]string, e
 func main() {
 	ctx := context.Background()
 
-	model, err := gemini.NewModel(ctx, "gemini-2.5-flash", &genai.ClientConfig{
-		APIKey: os.Getenv("GOOGLE_API_KEY"),
-	})
+	// Use Ollama Qwen2.5 model instead of Gemini
+	model, err := NewLiteLlm("qwen2.5")
 	if err != nil {
 		log.Fatalf("Failed to create model: %v", err)
 	}

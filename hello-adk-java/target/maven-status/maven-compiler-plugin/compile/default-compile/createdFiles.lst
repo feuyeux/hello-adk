@@ -1,6 +1,5 @@
 com\example\AgentCliRunner.class
 com\example\PeriodicTable$Element.class
-com\example\CheckApi.class
 com\example\LangChain4jOllamaLlm.class
 com\example\PeriodicTable.class
 com\example\PeriodicTableAgent.class

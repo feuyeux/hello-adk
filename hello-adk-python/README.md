@@ -1,9 +1,6 @@
-# Hello Google Agent Development Kit
+# Hello Google Agent Development Kit - Python
 
-1. [Installing ADK](https://google.github.io/adk-docs/get-started/installation/)
-2. [Quickstart](https://google.github.io/adk-docs/get-started/quickstart/)
-
-## Install
+## Installation
 
 Create the virtual environment (all OS):
 
@@ -58,17 +55,7 @@ python -m pip install google-adk litellm
 python -m pip show google-adk litellm | grep -E '^Name|^Version'
 ```
 
-```sh
-ollama show qwen2.5
-```
-
-Run the following command to launch the dev UI.
-
-```sh
-adk web
-```
-
-Run the following command, to chat with your Google Search agent.
+## Running the Agent
 
 ```sh
 adk run hello_ollama
@@ -76,6 +63,12 @@ adk run hello_ollama
 
 ```sh
 [user]: 给我氯元素的信息
+```
+
+Run the following command to launch the dev UI.
+
+```sh
+adk web
 ```
 
 `adk api_server` enables you to create a local FastAPI server in a single command, enabling you to test local cURL requests before you deploy your agent.
