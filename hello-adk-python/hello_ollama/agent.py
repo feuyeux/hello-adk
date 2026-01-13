@@ -24,12 +24,12 @@ def get_element_info(symbol: str) -> dict:
     logging.info(f"查询成功: {report}")
     return {"status": "success", "report": report}
 
-
+# ollama
+adk_model = LiteLlm(model="ollama_chat/qwen2.5")
+# google
+# adk_model="gemini-2.0-flash",
 root_agent = Agent(
-    # ollama
-    # model=LiteLlm(model="ollama_chat/qwen2.5"),
-    # google
-    model="gemini-2.0-flash",
+    model=adk_model,
     name="ollama_agent",
     description=(
         "Agent to answer questions about chemical element information."

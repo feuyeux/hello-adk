@@ -1,9 +1,45 @@
-.idea
+.idea/
+.vscode/
 .DS_Store
-*.bkp
-__pycache__
-*.trt
-*env
-runs
-*.json
+
+# Environments
+.env
+.env.local
 .venv
+*env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Node / TypeScript
+node_modules/
+npm-debug.log*
+
+# Builds / outputs
+dist/
+build/
+bin/
+runs
+
+# Logs / temp
+*.log
+*.tmp
+*.swp
+*.swo
+*~
+*.bkp
+
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Data / artifacts
+*.json
+.adk/

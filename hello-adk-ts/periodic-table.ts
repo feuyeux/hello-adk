@@ -1,0 +1,72 @@
+/**
+ * Periodic table data and element lookup utilities
+ */
+
+export interface Element {
+  symbol: string;
+  name: string;
+  chineseName: string;
+  atomicNumber: number;
+  atomicWeight: number;
+}
+
+const periodicTableData: { [key: string]: Element } = {
+  'H': { symbol: 'H', name: 'Hydrogen', chineseName: '氢', atomicNumber: 1, atomicWeight: 1.008 },
+  '氢': { symbol: 'H', name: 'Hydrogen', chineseName: '氢', atomicNumber: 1, atomicWeight: 1.008 },
+  'He': { symbol: 'He', name: 'Helium', chineseName: '氦', atomicNumber: 2, atomicWeight: 4.0026 },
+  '氦': { symbol: 'He', name: 'Helium', chineseName: '氦', atomicNumber: 2, atomicWeight: 4.0026 },
+  'Li': { symbol: 'Li', name: 'Lithium', chineseName: '锂', atomicNumber: 3, atomicWeight: 6.94 },
+  '锂': { symbol: 'Li', name: 'Lithium', chineseName: '锂', atomicNumber: 3, atomicWeight: 6.94 },
+  'Be': { symbol: 'Be', name: 'Beryllium', chineseName: '铍', atomicNumber: 4, atomicWeight: 9.0122 },
+  '铍': { symbol: 'Be', name: 'Beryllium', chineseName: '铍', atomicNumber: 4, atomicWeight: 9.0122 },
+  'B': { symbol: 'B', name: 'Boron', chineseName: '硼', atomicNumber: 5, atomicWeight: 10.81 },
+  '硼': { symbol: 'B', name: 'Boron', chineseName: '硼', atomicNumber: 5, atomicWeight: 10.81 },
+  'C': { symbol: 'C', name: 'Carbon', chineseName: '碳', atomicNumber: 6, atomicWeight: 12.011 },
+  '碳': { symbol: 'C', name: 'Carbon', chineseName: '碳', atomicNumber: 6, atomicWeight: 12.011 },
+  'N': { symbol: 'N', name: 'Nitrogen', chineseName: '氮', atomicNumber: 7, atomicWeight: 14.007 },
+  '氮': { symbol: 'N', name: 'Nitrogen', chineseName: '氮', atomicNumber: 7, atomicWeight: 14.007 },
+  'O': { symbol: 'O', name: 'Oxygen', chineseName: '氧', atomicNumber: 8, atomicWeight: 15.999 },
+  '氧': { symbol: 'O', name: 'Oxygen', chineseName: '氧', atomicNumber: 8, atomicWeight: 15.999 },
+  'F': { symbol: 'F', name: 'Fluorine', chineseName: '氟', atomicNumber: 9, atomicWeight: 18.998 },
+  '氟': { symbol: 'F', name: 'Fluorine', chineseName: '氟', atomicNumber: 9, atomicWeight: 18.998 },
+  'Ne': { symbol: 'Ne', name: 'Neon', chineseName: '氖', atomicNumber: 10, atomicWeight: 20.180 },
+  '氖': { symbol: 'Ne', name: 'Neon', chineseName: '氖', atomicNumber: 10, atomicWeight: 20.180 },
+  'Na': { symbol: 'Na', name: 'Sodium', chineseName: '钠', atomicNumber: 11, atomicWeight: 22.990 },
+  '钠': { symbol: 'Na', name: 'Sodium', chineseName: '钠', atomicNumber: 11, atomicWeight: 22.990 },
+  'Mg': { symbol: 'Mg', name: 'Magnesium', chineseName: '镁', atomicNumber: 12, atomicWeight: 24.305 },
+  '镁': { symbol: 'Mg', name: 'Magnesium', chineseName: '镁', atomicNumber: 12, atomicWeight: 24.305 },
+  'Al': { symbol: 'Al', name: 'Aluminum', chineseName: '铝', atomicNumber: 13, atomicWeight: 26.982 },
+  '铝': { symbol: 'Al', name: 'Aluminum', chineseName: '铝', atomicNumber: 13, atomicWeight: 26.982 },
+  'Si': { symbol: 'Si', name: 'Silicon', chineseName: '硅', atomicNumber: 14, atomicWeight: 28.085 },
+  '硅': { symbol: 'Si', name: 'Silicon', chineseName: '硅', atomicNumber: 14, atomicWeight: 28.085 },
+  'P': { symbol: 'P', name: 'Phosphorus', chineseName: '磷', atomicNumber: 15, atomicWeight: 30.974 },
+  '磷': { symbol: 'P', name: 'Phosphorus', chineseName: '磷', atomicNumber: 15, atomicWeight: 30.974 },
+  'S': { symbol: 'S', name: 'Sulfur', chineseName: '硫', atomicNumber: 16, atomicWeight: 32.06 },
+  '硫': { symbol: 'S', name: 'Sulfur', chineseName: '硫', atomicNumber: 16, atomicWeight: 32.06 },
+  'Cl': { symbol: 'Cl', name: 'Chlorine', chineseName: '氯', atomicNumber: 17, atomicWeight: 35.45 },
+  '氯': { symbol: 'Cl', name: 'Chlorine', chineseName: '氯', atomicNumber: 17, atomicWeight: 35.45 },
+  'Ar': { symbol: 'Ar', name: 'Argon', chineseName: '氩', atomicNumber: 18, atomicWeight: 39.948 },
+  '氩': { symbol: 'Ar', name: 'Argon', chineseName: '氩', atomicNumber: 18, atomicWeight: 39.948 },
+  'K': { symbol: 'K', name: 'Potassium', chineseName: '钾', atomicNumber: 19, atomicWeight: 39.098 },
+  '钾': { symbol: 'K', name: 'Potassium', chineseName: '钾', atomicNumber: 19, atomicWeight: 39.098 },
+  'Ca': { symbol: 'Ca', name: 'Calcium', chineseName: '钙', atomicNumber: 20, atomicWeight: 40.078 },
+  '钙': { symbol: 'Ca', name: 'Calcium', chineseName: '钙', atomicNumber: 20, atomicWeight: 40.078 },
+  'Fe': { symbol: 'Fe', name: 'Iron', chineseName: '铁', atomicNumber: 26, atomicWeight: 55.845 },
+  '铁': { symbol: 'Fe', name: 'Iron', chineseName: '铁', atomicNumber: 26, atomicWeight: 55.845 },
+  'Cu': { symbol: 'Cu', name: 'Copper', chineseName: '铜', atomicNumber: 29, atomicWeight: 63.546 },
+  '铜': { symbol: 'Cu', name: 'Copper', chineseName: '铜', atomicNumber: 29, atomicWeight: 63.546 },
+  'Zn': { symbol: 'Zn', name: 'Zinc', chineseName: '锌', atomicNumber: 30, atomicWeight: 65.38 },
+  '锌': { symbol: 'Zn', name: 'Zinc', chineseName: '锌', atomicNumber: 30, atomicWeight: 65.38 },
+  'Au': { symbol: 'Au', name: 'Gold', chineseName: '金', atomicNumber: 79, atomicWeight: 196.97 },
+  '金': { symbol: 'Au', name: 'Gold', chineseName: '金', atomicNumber: 79, atomicWeight: 196.97 },
+  'Hg': { symbol: 'Hg', name: 'Mercury', chineseName: '汞', atomicNumber: 80, atomicWeight: 200.59 },
+  '汞': { symbol: 'Hg', name: 'Mercury', chineseName: '汞', atomicNumber: 80, atomicWeight: 200.59 },
+  'Pb': { symbol: 'Pb', name: 'Lead', chineseName: '铅', atomicNumber: 82, atomicWeight: 207.2 },
+  '铅': { symbol: 'Pb', name: 'Lead', chineseName: '铅', atomicNumber: 82, atomicWeight: 207.2 },
+  'U': { symbol: 'U', name: 'Uranium', chineseName: '铀', atomicNumber: 92, atomicWeight: 238.03 },
+  '铀': { symbol: 'U', name: 'Uranium', chineseName: '铀', atomicNumber: 92, atomicWeight: 238.03 },
+};
+
+export function getElement(query: string): Element | null {
+  return periodicTableData[query] || null;
+}
