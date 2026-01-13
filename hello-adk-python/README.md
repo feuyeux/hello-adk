@@ -27,7 +27,7 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 
 . .\.venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
-python -m pip install google-adk litellm
+python -m pip install -i https://pypi.tuna.tsinghua.edu.cn/simple google-adk litellm
 
 # Verify (optional)
 python -m pip show google-adk litellm | grep -E '^Name|^Version'

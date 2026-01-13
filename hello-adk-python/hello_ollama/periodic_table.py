@@ -124,9 +124,12 @@ def periodic_map() -> dict:
         "Ts": {"name": "Tennessine", "chinese_name": "鿬", "atomic_number": 117, "atomic_weight": 294},
         "Og": {"name": "Oganesson", "chinese_name": "鿫", "atomic_number": 118, "atomic_weight": 294},
     }
-    # Initialize _symbol_map with Chinese names as keys and element symbols as values
+    # Initialize _symbol_map with both element symbols and Chinese names as keys
     _symbol_map = {}
     for symbol, data in _periodic_table.items():
-        _symbol_map[data["chinese_name"]] = symbol
+        # Map symbol to element data
+        _symbol_map[symbol] = data
+        # Map Chinese name to element data
+        _symbol_map[data["chinese_name"]] = data
 
     return _symbol_map
