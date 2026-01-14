@@ -11,17 +11,18 @@ import java.time.Duration;
 import java.util.Map;
 
 public class PeriodicTableAgent {
+    // ADK web server looks for this static field to find the agent
+    public static final BaseAgent ROOT_AGENT = initAgent();
+    
     // Lazy initialization to avoid issues during CheckApi
     private static BaseAgent rootAgent;
     
     public static BaseAgent getRootAgent() {
         if (rootAgent == null) {
-            rootAgent = initAgent();
+            rootAgent = ROOT_AGENT;
         }
         return rootAgent;
     }
-    
-    public static BaseAgent ROOT_AGENT = null; // Will be initialized on first access
 
     private static String getEnvOrDefault(String key, String defaultValue) {
         String value = System.getenv(key);

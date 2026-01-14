@@ -20,8 +20,25 @@ Or using the full command:
 mvn compile exec:java -Dexec.mainClass="com.example.AgentCliRunner"
 ```
 
-Then access the web interface at <http://localhost:8000>
-> Note: The web interface is currently not available in the Java version due to missing dependencies. Please use the CLI runner.
+## Running the Web Interface
+
+```bash
+mvn compile exec:java -Dexec.mainClass=com.google.adk.web.AdkWebServer -Dexec.args="--adk.agents.source-dir=src/main/java/com/example --server.port=8080"
+```
+
+Then access the web interface at <http://localhost:8080>
+
+## Running the CLI Interface
+
+```bash
+mvn compile exec:java
+```
+
+Or using the full command:
+
+```bash
+mvn compile exec:java -Dexec.mainClass="com.example.AgentCliRunner"
+```
 
 ## Example Usage
 
