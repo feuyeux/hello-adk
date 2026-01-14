@@ -70,10 +70,10 @@ type OllamaCompletionRequest struct {
 
 // OllamaCompletionResponse represents the response format from Ollama completion API
 type OllamaCompletionResponse struct {
-	Model  string `json:"model"`
-	Prompt string `json:"prompt"`
+	Model    string `json:"model"`
+	Prompt   string `json:"prompt"`
 	Response string `json:"response"`
-	Done bool `json:"done"`
+	Done     bool   `json:"done"`
 }
 
 // convertToOllamaRequest converts ADK LLMRequest to Ollama completion request format
