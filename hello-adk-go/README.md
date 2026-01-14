@@ -5,6 +5,8 @@ This is a Go implementation of the Periodic Table Agent using Google's Agent Dev
 ## Prerequisites
 
 - Go 1.24+ (as recommended by the ADK Go quickstart)
+  - Windows: Download and install Go 1.24+ from https://golang.org/dl/
+- Ollama running locally (for the qwen2.5 model)
 
 ## Setup
 
@@ -15,50 +17,28 @@ cd hello-adk-go
 go mod tidy
 ```
 
-1. Set your API key:
-
-```bash
-echo 'export GOOGLE_API_KEY="YOUR_API_KEY"' > .env
-# Windows PowerShell
-Set-Content .env 'set GOOGLE_API_KEY="YOUR_API_KEY"'
-```
 
 ## Run
 
 Interactive CLI:
 
 ```bash
-# remember to load keys: source .env OR run the PowerShell command above
-go run agent.go
+go run .
+```
+
+
+```sh
+User -> 氢
+Agent -> 氢, Atomic Number: 1, Atomic Weight: 1.0080
+
+User -> O
+Agent -> 氧(O), Atomic Number: 8, Atomic Weight: 15.9994
 ```
 
 ADK Web interface:
 
 ```bash
-# remember to load keys
-go run agent.go web api webui
+go run . web -port 8000 api webui -api_server_address http://localhost:8000/api
 ```
 
 Then open <http://localhost:8080> and select the agent.
-
-## Agent Features
-
-- Look up chemical elements by symbol (e.g., "H", "O", "Fe")
-- Look up chemical elements by Chinese name (e.g., "氢", "氧", "铁")
-- Returns: Chinese name, English name, atomic number, atomic weight
-
-## Notes
-
-- The tool is implemented with `functiontool.New` and exposes `get_element_info`.
-- Model: `gemini-2.5-flash` (change in `agent.go` if needed).
-
-## Project Structure
-
-```
-hello-adk-go/
-├── agent.go             # Agent definition and launcher
-├── periodic_table.go    # Periodic table data and lookup
-├── go.mod               # Module definition
-├── .env                 # API key placeholder
-└── .gitignore
-```

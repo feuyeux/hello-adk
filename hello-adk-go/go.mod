@@ -2,8 +2,6 @@ module hello-adk-go
 
 go 1.24.4
 
-toolchain go1.24.11
-
 require (
 	google.golang.org/adk v0.3.0
 	google.golang.org/genai v1.40.0
