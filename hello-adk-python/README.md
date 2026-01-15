@@ -58,6 +58,7 @@ python -m pip show google-adk litellm | grep -E '^Name|^Version'
 ## Running the Agent
 
 ```sh
+. .\.venv\Scripts\Activate.ps1
 adk run hello_ollama
 ```
 
@@ -68,6 +69,7 @@ adk run hello_ollama
 Run the following command to launch the dev UI.
 
 ```sh
+. .\.venv\Scripts\Activate.ps1
 adk web
 ```
 
